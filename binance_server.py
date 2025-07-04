@@ -64,19 +64,19 @@ def get_klines(symbol: str = "BTCUSDT", interval: str = "1h", limit: int = 10) -
 
 # --- Tool 5: Análise técnica com gráfico base64 ---
 
-class IndicatorInput(BaseModel):
-    symbol: str
+# class IndicatorInput(BaseModel):
+#     symbol: str
 
-@mcp.tool()
-def analyze_indicators(input: IndicatorInput) -> str:
-    """
-    Gera análise técnica avançada e retorna imagem base64 com RSI, MACD, etc.
-    """
-    img_buffer = BytesIO()
-    analyze_advanced(input.symbol, output_path=img_buffer)
-    img_buffer.seek(0)
-    b64 = base64.b64encode(img_buffer.read()).decode("utf-8")
-    return f"data:image/png;base64,{b64}"
+# @mcp.tool()
+# def analyze_indicators(input: IndicatorInput) -> str:
+#     """
+#     Gera análise técnica avançada e retorna imagem base64 com RSI, MACD, etc.
+#     """
+#     img_buffer = BytesIO()
+#     analyze_advanced(input.symbol, output_path=img_buffer)
+#     img_buffer.seek(0)
+#     b64 = base64.b64encode(img_buffer.read()).decode("utf-8")
+#     return f"data:image/png;base64,{b64}"
 
 # Inicia o servidor MCP
 if __name__ == "__main__":
